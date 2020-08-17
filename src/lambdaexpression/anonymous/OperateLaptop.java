@@ -16,14 +16,16 @@ public class OperateLaptop {
             }
         };
 
-
-
-
         laptop.monitorSize(16);
         laptop.monitorSize(15);
 
         //please implement anonymous function for Phone FunctionalInterface
-        Phone phone = (network) -> System.out.println("Cellular Network is : " + network);
+        Phone phone = new Phone() {
+            @Override
+            public void cellularNetwork(String network) {
+                System.out.println("Cellular Network is : " + network);
+            }
+        };
         phone.cellularNetwork("At&t");
 
     }
