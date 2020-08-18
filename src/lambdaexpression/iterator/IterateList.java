@@ -29,9 +29,7 @@ public class IterateList {
 
         //Please implement lambda Method Reference to iterate through electronicsList
         System.out.println("Lambda Method Reference-1");
-        electronicsList.forEach((st) -> {
-            System.out.println(st);
-        });
+        electronicsList.forEach(System.out::println);
 
 
         //Please implement lambda Method Reference from Electronics class to iterate through electronicsList
