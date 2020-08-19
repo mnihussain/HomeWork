@@ -1,9 +1,12 @@
 package lambdaexpression.iterator;
 
+import lambdaexpression.anonymous.Phone;
+
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.function.Consumer;
+import java.util.stream.Stream;
 
 public class IterateList {
     public static void main(String[] args) {
@@ -36,7 +39,8 @@ public class IterateList {
         System.out.println("Lambda Method Reference-2 using Electronics class");
         electronicsList.forEach(st -> {
             System.out.println("Method Ref -2 : "+st);
-            Electronics.countWordLength("Length is : "+st);
+            Phone phone = Electronics::countWordLength;
+            phone.cellularNetwork(st);
         });
 
         //Please implement stream iteration through electronicsList
@@ -44,7 +48,7 @@ public class IterateList {
         electronicsList.stream()
                 .filter(st -> st.contains("."))
                 .forEach(st -> {
-                    Arrays.stream(st.split("."))
+                    Arrays.stream(st.split("\\."))
                             .forEach(s -> System.out.println("From array : "+ s));
                     });
     }
